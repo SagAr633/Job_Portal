@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h2>Welcome {{request.user}}</h2>
+            <hr>
+            {%if request.user.candidates%}
+                <a href="{%url 'c-detail'%}">View_Profile</a>
+            {%else%}
+                <a href="{%url 'c-profile'%}">Add_Profile</a>
+            {%endif%}
+            <a href="{%url 'c-jobs'%}">All_Jobs</a>
+            <a href="{%url 'my_app'%}">Applied_Jobs</a>
+            <a href="{%url 'accp_jobs'%}">Notification</a>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>

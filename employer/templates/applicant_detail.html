@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+                <div class="card" style="width: 18rem;">
+                      <img src="{{applic.applicant.candidates.pro_pic.url}}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Name : {{applic.applicant}}</h5>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Age : {{applic.applicant.candidates.age}}</li>
+                    <li class="list-group-item">Email : {{applic.applicant.email}}</li>
+                    <li class="list-group-item">Phone : {{applic.applicant.phone}}</li>
+                      <li class="list-group-item">Qualification : {{applic.applicant.candidates.qualification}}</li>
+                      <li class="list-group-item">Skills : {{applic.applicant.candidates.skills}}</li>
+                    <li class="list-group-item">Applied On : {{applic.date}}</li>
+                          <li class="list-group-item">CV : <a href="{{applic.applicant.candidates.cv.url}}">{{applic.applicant.candidates.cv}}</a></li>
+                      </ul>
+                       <a href="{%url 'a_status' applic.id%}" class="btn btn-success">Accept</a>
+                    <a href="{%url 'status' applic.id%}" class="btn btn-danger">Reject</a>
+                    </div>
+
+
+            </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"><br>
+              {%for app in all_app%}
+            <h3>Applicants for {{app.job.job_title}}</h3>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-header">
+                    Applicant Name : {{app.applicant}}
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Applied Date : {{app.date}}</li>
+                    <li class="list-group-item">Qualification : {{app.applicant.candidates.qualification}}</li>
+                    <li class="list-group-item">CV : {{app.applicant.candidates.cv}}</li>
+                  </ul>
+                    <a href="{%url 'applicant-det' app.id%}" class="btn btn-success">View Profile</a>
+              {%endfor%}
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</div>
+</body>
+</html>
