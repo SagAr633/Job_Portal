@@ -1,20 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-</head>
-<body>
-{%for appl in applied%}
-<div>
-    Title : {{appl.job.job_title}}
-    Designation : {{appl.job.role}}
-    Status : {{appl.status}}
-    Applied Date : {{appl.date}}
+{%extends 'base.html'%}
+
+{%block body_block%}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 mt-2 mb-3">
+                <h2><u>Applied Jobs</u></h2>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        {%for appl in applied%}
+            {%if appl.status == 'accepted'%}
+                    <div class="list-group">
+                          <a href="#" class="list-group-item list-group-item-action active bg-success " style="color:black;" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h5 class="mb-1">Title : {{appl.job.job_title}}</h5>
+                              <small>3 days ago</small>
+                            </div>
+                            <p class="mb-1">Designation : {{appl.job.role}}</p>
+                            <small>Applied on : {{appl.date}}</small>
+                              <p class="mb-1">Status : <b>{{appl.status}}</b></p>
+                          </a>
+                    </div>
+                    <hr>
+            {%elif appl.status == 'rejected'%}
+                    <div class="list-group">
+                          <a href="#" class="list-group-item list-group-item-action active bg-danger" style="color:black;" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h5 class="mb-1">Title : {{appl.job.job_title}}</h5>
+                              <small>3 days ago</small>
+                            </div>
+                            <p class="mb-1">Designation : {{appl.job.role}}</p>
+                            <small>Applied on : {{appl.date}}</small>
+                              <p class="mb-1">Status : <b>{{appl.status}}</b></p>
+                          </a>
+                    </div>
+                    <hr>
+            {%else%}
+                    <div class="list-group">
+                          <a href="#" class="list-group-item list-group-item-action active bg-warning " style="color:black;" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                              <h5 class="mb-1">Title : {{appl.job.job_title}}</h5>
+                              <small>3 days ago</small>
+                            </div>
+                            <p class="mb-1">Designation : {{appl.job.role}}</p>
+                            <small>Applied on : {{appl.date}}</small>
+                              <p class="mb-1">Status : <b>{{appl.status}}</b></p>
+                          </a>
+                    </div>
+                    <hr>
+
+            {%endif%}
+        {%endfor%}
+
+
+    </div>
+    <div class="col-4"></div>
 </div>
-<hr>
-{%endfor%}
-</body>
-</html>
+
+{%endblock%}

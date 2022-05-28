@@ -1,18 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{%for appl in application%}
-<div>
-    Title : {{appl.job.job_title}}
-    Designation : {{appl.job.role}}
-    Status : {{appl.status}}
-    Applied Date : {{appl.date}}
+{%extends 'base.html'%}
+{%block body_block%}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h2><u>Notification</u></h2>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        {%for appl in application%}
+
+        <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Congratulations, {{request.user}}</h5>
+                  <small>3 days ago</small>
+                </div>
+                <p class="mb-1">Your application for {{appl.job.role}} has been accepted by {{appl.job.posted_by}}.</p>
+                <small>Check your mail for more information.</small>
+              </a>
+        </div>
+
+        {%endfor%}
+
+    </div>
+    <div class="col-4"></div>
 </div>
-<hr>
-{%endfor%}
-</body>
-</html>
+
+{%endblock%}

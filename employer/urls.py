@@ -12,5 +12,6 @@ urlpatterns=[
     path('view_applic/<int:id>',views.ViewApplication.as_view(),name='view_applic'),
     path('applic-det/<int:id>',views.ApplicantDetailView.as_view(),name='applicant-det'),
     path('status/<int:id>',views.update_application,name='status'),
-    path('a_status/<int:id>',views.accept_application,name='a_status')
+    path('a_status/<int:id>',views.accept_application,name='a_status'),
+    path('update/<int:id>',views.EmpProUpdateView.as_view(),name='e-update')
 ]

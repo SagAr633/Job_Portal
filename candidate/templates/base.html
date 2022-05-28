@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:white;"><b>JobPortal.</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            {%if request.user.is_candidate%}
+          <a class="nav-link active" style="color:white;" aria-current="page" href="{%url 'c-home'%}">Home</a>
+            {%else%}
+            <a class="nav-link active" style="color:white;" aria-current="page" href="{%url 'emp_home'%}">Home</a>
+            {%endif%}
+        </li>
+        <li class="nav-item" >
+            {%if request.user.is_candidate%}
+              <a class="nav-link" style="color:white;" href="{%url 'c-jobs'%}">Find Jobs</a>
+            {%else%}
+                <a class="nav-link" style="color:white;" href="{%url 'emp-all-jobs'%}">All Jobs</a>
+            {%endif%}
+        </li>
+        <li class="nav-item">
+            {%if request.user.is_candidate%}
+              <a class="nav-link" style="color:white;" href="{%url 'my_app'%}">Applied Jobs</a>
+            {%else%}
+                <a class="nav-link" style="color:white;" href="{%url 'emp-jobs'%}">Add Jobs</a>
+            {%endif%}
+
+        </li>
+        <li class="nav-item">
+            {%if request.user.is_candidate%}
+            <a class="nav-link" style="color:white;" href="{%url 'accp_jobs'%}">Notification</a>
+<!--            <span class="badge bg-primary rounded-pill">14</span>-->
+            {%endif%}
+        </li>
+        </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+          {%if request.user.is_candidate%}
+        {%if request.get_full_path == '/candidate/cdetail'%}
+            <form action="">
+              <a href="{%url 'signout'%}" class="btn btn-outline-danger ms-4">logout</a>
+            </form>
+        {%else%}
+            {%if request.user.is_candidate%}
+            <img src="{{request.user.candidates.pro_pic.url}}" height="40px" width="40px" alt="">
+            {%endif%}
+            {%if request.user.candidates%}
+              <a class="nav-link ms-2" style="color:white;" href="{%url 'c-detail'%}">Hi,{{request.user}}</a>
+              {%else%}
+                <a class="nav-link" style="color:white;" href="{%url 'c-profile'%}">Add Profile</a>
+              {%endif%}
+
+            <a href="{%url 'signout'%}" class="btn btn-outline-danger ms-4">logout</a>
+          {%endif%}
+          {%endif%}
+
+        {%if request.user.is_employer%}
+          {%if request.get_full_path == '/employer/e-detail'%}
+            <form action="">
+              <a href="{%url 'signout'%}" class="btn btn-outline-danger ms-4">logout</a>
+            </form>
+        {%else%}
+            {%if request.user.is_employer%}
+            <img src="{{request.user.candidates.pro_pic.url}}" height="40px" width="40px" alt="">
+            {%endif%}
+
+            {%if request.user.employers%}
+            <a class="nav-link ms-2" style="color:white;" href="{%url 'emp-detail'%}">Hi,{{request.user}}</a>
+            {%else%}
+            <a class="nav-link" style="color:white;" href="{%url 'emp-profile'%}">Add Profile</a>
+            {%endif%}
+
+            <a href="{%url 'signout'%}" class="btn btn-outline-danger ms-4">logout</a>
+        {%endif%}
+          {%endif%}
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    {%block body_block%}
+    {%endblock%}
+</div>
+</body>
+</html>

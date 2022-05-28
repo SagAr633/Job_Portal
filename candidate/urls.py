@@ -9,5 +9,7 @@ urlpatterns=[
     path('jobs',views.AllJobsView.as_view(),name='c-jobs'),
     path('application/add/<int:id>',views.apply_now,name='apply_now'),
     path('myapp',views.MyApplicationView.as_view(),name='my_app'),
-    path('accepted',views.AcceptedApplications.as_view(),name='accp_jobs')
+    path('accepted',views.AcceptedApplications.as_view(),name='accp_jobs'),
+    path('signout',views.signout,name='signout'),
+    path('update/<int:id>',views.CandProfileEditView.as_view(),name='c-update')
 ]

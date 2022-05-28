@@ -1,27 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
-<body>
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <h1>Welcome Employer - {{request.user}}</h1>
-            {%if request.user.employers%}
-            <a href="{%url 'emp-detail'%}">View_Profile</a>
-            {%else%}
-            <a href="{%url 'emp-profile'%}">Add_Profile</a>
-            {%endif%}
-            <a href="{%url 'emp-jobs'%}">Add_Job</a>
-            <a href="{%url 'emp-all-jobs'%}">All_Jobs</a>
-        </div>
-        <div class="col-2"></div>
+{%extends 'base.html'%}
+{%block body_block%}
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 mt-5">
+        <h1>Welcome Employer - {{request.user}}</h1>
+
     </div>
+    <div class="col-6"></div>
 </div>
-</body>
-</html>
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        {% if messages %}
+        {%for message in messages%}
+            {%if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="bg-info">
+                {{message}}
+            </div>
+            {%endif%}
+
+        {%endfor%}
+        {% endif %}
+    </div>
+    <div class="col-4"></div>
+</div>
+
+{%endblock%}

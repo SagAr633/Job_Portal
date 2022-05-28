@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+{%extends 'base.html'%}
 
-</head>
-<body>
-<div class="container">
+{%block body_block%}
+
   <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
-      <h5 class="card-title mt-5 mb-3">About {{request.user}}</h5>
+
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <h3 class="card-title mt-2 mb-3"><u>About {{request.user}}</u></h3>
+        </div>
+        <div class="col-2"></div>
+      </div>
+
       <div class="card" style="width: 18rem;">
         <img src="{{request.user.candidates.pro_pic.url}}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -22,17 +24,14 @@
           <li class="list-group-item">Qualification : {{request.user.candidates.qualification}}</li>
           <li class="list-group-item">Skills : {{request.user.candidates.skills}}</li>
           <li class="list-group-item">CV : {{request.user.candidates.cv}}</li>
-
-
         </ul>
-        <div class="card-body">
-          <a href="{%url 'c-home'%}" class="btn btn-outline-danger">Back</a>
-        </div>
+
+        <a href="{%url 'c-update' request.user.candidates.id%}" class="btn btn-warning">Edit</a>
+
       </div>
 
     </div>
     <div class="col-4"></div>
   </div>
-</div>
-</body>
-</html>
+
+{%endblock%}

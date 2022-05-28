@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jp_app',
     'employer',
-    'candidate'
+    'candidate',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
