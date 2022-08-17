@@ -1,9 +1,510 @@
 body{
 
-    /* background-color: rgb(29, 28, 28); */
-    background-image: url(./pexels-martin-péchy-2078266.jpg);
-    background-size: cover;
+    /* min-height: 1500px; */
+    position: relative;
     color: rgb(0, 0, 0);
+    background-color: rgb(227, 227, 227);
+    /* background-image: url(pexels-ksenia-chernaya-5691475.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
     
+}
 
+/*--------------------------------------------------------------
+# main button
+--------------------------------------------------------------*/
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #00000000 0%, #7dc5762b  51%, #00000000  100%);
+  margin: 10px;
+  padding: 7px 30px;
+  text-align: center;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #7cc576;
+  text-decoration: none;
+  box-shadow: 0 0 10px #7dc57652;
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section .....
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(hero-bg.png);
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#hero-h:hover {
+
+  color: #7cc576;
+  cursor: pointer;
+
+}
+#hero-h1:hover {
+
+  color: #7cc576;
+  cursor: pointer;
+
+}
+#hero-user {
+  color: #7cc576;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Hero Section Animation
+--------------------------------------------------------------*/
+
+#hero img{
+  animation: fadeInFromTop 1s linear forwards, floating ease 8s infinite;
+  /* position: absolute; */
+ 
+}
+
+@keyframes  fadeInFromTop {
+	from{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floating {
+	0% { transform: rotate(0deg);}
+	/* 25% { transform: rotate(360deg);} */
+	/* 50% { transform: rotate(200deg);} */
+  /* 75% { transform: rotate(300deg);} */
+  /* 0% { transform: rotate(0deg);} */
+  25% { transform: rotate(45deg) ;}
+  50% { transform: rotate(0deg);}
+  75% { transform: rotate(-45deg);}
+  
+}
+
+/*--------------------------------------------------------------
+# Hero Section 2 .....
+--------------------------------------------------------------*/
+#heroo {
+  width: 100%;
+  height: 100vh;
+  background-image: url(hero-bg.png);
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#hero-hh:hover {
+
+  color: #7cc576;
+  cursor: pointer;
+
+}
+#hero-h11:hover {
+
+  color: #7cc576;
+  cursor: pointer;
+
+}
+#hero-user1 {
+  color: #7cc576;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Hero Section Animation 2
+--------------------------------------------------------------*/
+
+#heroo img{
+  animation: fadeInFromTop 1s linear forwards, floating ease 8s infinite;
+  /* position: absolute; */
+ 
+}
+
+@keyframes  fadeInFromTop {
+	from{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floating {
+	0% { transform: rotate(0deg);}
+	/* 25% { transform: rotate(360deg);} */
+	/* 50% { transform: rotate(200deg);} */
+  /* 75% { transform: rotate(300deg);} */
+  /* 0% { transform: rotate(0deg);} */
+  25% { transform: rotate(45deg) ;}
+  50% { transform: rotate(0deg);}
+  75% { transform: rotate(-45deg);}
+  
+}
+
+/*--------------------------------------------------------------
+# Get started button
+--------------------------------------------------------------*/
+         
+.btn-grad2 {
+  background-image: linear-gradient(to right, #00000000 0%, #7dc5762b  51%, #00000000  100%);
+  margin: 10px;
+  padding: 7px 30px;
+  text-align: center;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad2:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #7cc576;
+  text-decoration: none;
+  box-shadow: 0 0 10px #7dc57652;
+}
+
+/*--------------------------------------------------------------
+# employer job list view button
+--------------------------------------------------------------*/
+       
+.btn-grad3 {
+  background-image: linear-gradient(to right, #c21500 0%, #ffc500  51%, #c21500  100%);
+  margin: 10px;
+  padding: 7px 30px;
+  text-align: center;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad3:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  box-shadow: 0 0 10px #ffc500;
+}
+
+/*--------------------------------------------------------------
+# employer job list applications button
+--------------------------------------------------------------*/
+         
+.btn-grad4 {
+  background-image: linear-gradient(to right, #00bf8f 0%, #001510  51%, #00bf8f  100%);
+  margin: 10px;
+  padding: 7px 30px;
+  text-align: center;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad4:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  box-shadow: 0 0 10px #00bf8f;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+
+#nav-sec {
+  background-image: url(hero-bg.png);
+  color: rgb(255, 0, 0);
+}
+.nav-link {
+  color: white;
+}
+.nav-link:hover {
+  color: #7cc576;
+}
+.navbar {
+  position: sticky;
+}
+
+
+/*--------------------------------------------------------------
+# Navbar logo Animation
+--------------------------------------------------------------*/
+
+#nav-logo img{
+  animation: fadeInFromTop 1s linear forwards, floating ease 8s infinite;
+  /* position: absolute; */
+ 
+}
+
+@keyframes  fadeInFromTop {
+	from{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floating {
+	0% { transform: rotate(0deg);}
+	/* 25% { transform: rotate(360deg);} */
+	/* 50% { transform: rotate(200deg);} */
+  /* 75% { transform: rotate(300deg);} */
+  /* 0% { transform: rotate(0deg);} */
+  25% { transform: rotate(45deg) ;}
+  50% { transform: rotate(0deg);}
+  75% { transform: rotate(-45deg);}
+  
+}
+
+#nav-content:hover {
+
+  color: #7cc576;
+  cursor: pointer;
+
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# All job 
+--------------------------------------------------------------*/
+
+#id-all-job:hover {
+  box-shadow: 0 0 10px #7cc576;
+}
+
+#all-jobs-title {
+  color: rgb(0, 0, 0);
+}
+
+#all-jobs-title:hover {
+  color: #7cc576 ;
+  cursor: pointer;
+  
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+  text-align: center;
+  background-image: url(hero-bg.png);
+  height: 400px;
+  color: white;
+}
+
+#footer-h1:hover {
+  color: #7cc576;
+  cursor: pointer;
+}
+
+#footer-h4:hover {
+  color: #7cc576;
+  cursor: pointer;
+}
+
+#footer-form {
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#footer-sub {
+  text-align: center;
+}
+
+#footer-form input[type="email"] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+}
+
+#footer-form input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  border: 0;
+  background: #7cc576;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 50px;
+  
+}
+
+#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
+  background: #5ab652;
+}
+
+/*--------------------------------------------------------------
+# Applied Card
+--------------------------------------------------------------*/
+#applied-job-title:hover {
+  color: #7cc576;
+  cursor: pointer;
+}
+#applied-card-accepted:hover {
+  box-shadow: 0 0 15px green;
+}
+#applied-card-rejected:hover {
+  box-shadow: 0 0 15px red;
+}
+#applied-card-pending:hover {
+  box-shadow: 0 0 15px yellow;
+}
+
+/*--------------------------------------------------------------
+# Candidate Detail Card
+--------------------------------------------------------------*/
+
+
+#cand-det-card {
+  background-image: url(hero-bg.png);
+  text-align: left;
+  padding: 5px;
+  margin-top: 30px;
+}
+#cand-det-card:hover {
+  box-shadow: 0 0 15px black;
+}
+
+/*--------------------------------------------------------------
+# Notification
+--------------------------------------------------------------*/
+
+#notification:hover {
+  box-shadow: 0 0 15px blue;
+  
+}
+#notification-title:hover {
+  color: #7cc576;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Employer All Jobs
+--------------------------------------------------------------*/
+
+#e-j-l-title:hover{
+  color: #7cc576;
+  cursor: pointer;
+}
+#e-j-list {
+  background-image: url(hero-bg.png);
+  text-align: center;
+}
+#e-j-list:hover {
+  box-shadow: 0 0 15px black;
+}
+.e-j-button {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Job Details 
+--------------------------------------------------------------*/
+
+#job-detail-card {
+  background-image: url(hero-bg.png);
+  
+}
+#job-detail-card:hover {
+  box-shadow: 0 0 15px black;
+  cursor: pointer;
+  
+}
+#job-detail-card-c_name {
+  text-align: center;
+  color: white;
+}
+#job-detail-title {
+  text-align: center;
+}
+#job-detail-apply-button {
+  margin-right: 50px;
+}
+
+/*--------------------------------------------------------------
+# Add Job
+--------------------------------------------------------------*/
+
+#add-job {
+  background-image: url(hero-bg.png);
+  color: white;
+}
+#add-job:hover {
+  box-shadow: 0 0 15px black;
+  cursor: pointer;
+}
+#add-job-title:hover {
+  color: #7cc576;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Employer Profile Detail
+--------------------------------------------------------------*/
+
+#emp-pro-details {
+  background-image: url(./hero-bg.png);
+}
+#emp-pro-details h5 {
+  color: #ffffff;
+}
+#emp-pro-details:hover {
+  box-shadow: 0 0 15px black;
+  cursor: pointer;
+}
+
+#emp-update {
+  background-image: url(./hero-bg.png);
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Candidate Profile Update
+--------------------------------------------------------------*/
+#cand-pro-update {
+  background-image: url(./hero-bg.png);
+  color: white;
+}
+#cand-pro-update:hover {
+  box-shadow: 0 0 15px black;
+  cursor: pointer;
 }

@@ -1,6 +1,57 @@
 body{
 
-    background-image: url(./pexels-martin-péchy-2078266.jpg);
-    background-size: cover;
+    background-image: url(hero-bg.png);
+    color: white;
 
 }
+
+.btn-grad4 {
+    background-image: linear-gradient(to right, #00bf8f 0%, #001510  51%, #00bf8f  100%);
+    margin: 10px;
+    padding: 7px 30px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+  }
+  
+  .btn-grad4:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    box-shadow: 0 0 10px #00bf8f;
+  }
+
+  
+#sign-log-logo img{
+    animation: fadeInFromTop 1s linear forwards, floating ease 8s infinite;
+    /* position: absolute; */
+   
+  }
+  
+  @keyframes  fadeInFromTop {
+      from{
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes floating {
+      0% { transform: rotate(0deg);}
+      /* 25% { transform: rotate(360deg);} */
+      /* 50% { transform: rotate(200deg);} */
+    /* 75% { transform: rotate(300deg);} */
+    /* 0% { transform: rotate(0deg);} */
+    25% { transform: rotate(45deg) ;}
+    50% { transform: rotate(0deg);}
+    75% { transform: rotate(-45deg);}
+    
+  }
+  
